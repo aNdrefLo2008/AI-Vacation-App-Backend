@@ -9,6 +9,14 @@ dotenv.config(); // Load environment variables
 const app = express();
 app.use(express.json()); // Middleware to parse JSON
 
+const cors = require("cors");
+app.use(cors()); // This will allow all origins
+
+
+app.use((req, res, next) => {
+    next();
+  });
+
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/itineraries", itineraryRoutes);

@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoute");
 const itineraryRoutes = require("./routes/iteneraryRoute");
 const expenseRoutes = require("./routes/expensesRoute");
+const aiRoutes = require('./controllers/AIController');
 
 dotenv.config(); // Load environment variables
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 app.use("/api/users", userRoutes);
 app.use("/api/itineraries", itineraryRoutes);
 app.use("/api/expenses", expenseRoutes);
+app.use('/api/ai', aiRoutes.getAIResponse);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

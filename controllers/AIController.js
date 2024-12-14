@@ -22,7 +22,7 @@ const getAIResponse = async (req, res) => {
     try {
         // Request completion from the OpenAI API
         const completion = await openai.chat.completions.create({
-            model: "gpt-4", // You can change this model to a different one, if needed.
+            model: "gpt-3.5-turbo-0125", // You can change this model to a different one, if needed.
             messages: [
                 { role: "system", content: "You are a helpful travel assistant." },
                 { role: "user", content: userPrompt },

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Itinerary" ADD COLUMN     "cost" INTEGER NOT NULL DEFAULT 1000;

@@ -31,6 +31,7 @@ model Itinerary {
   endDate     DateTime
   userId      Int
   user        User      @relation(fields: [userId], references: [id])
+  cost        Int       @default(1000)
   expenses    Expense[]
   nights      Int       @default(0)
   createdAt   DateTime  @default(now())

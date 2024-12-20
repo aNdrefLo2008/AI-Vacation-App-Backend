@@ -84,6 +84,7 @@ const getItineraries = async (req, res) => {
     const itineraries = await prisma.itinerary.findMany({
       where: { userId },
       include: { expenses: true }, // Include related expenses
+      include: { locations: true },
     });
     res.json(itineraries);
   } catch (err) {

@@ -4,6 +4,7 @@ const userRoutes = require("./routes/userRoute");
 const itineraryRoutes = require("./routes/iteneraryRoute");
 const expenseRoutes = require("./routes/expensesRoute");
 const aiRoutes = require('./controllers/AIController');
+const locationRoutes = require('./routes/locationRoute');
 
 dotenv.config(); // Load environment variables
 
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
   });
 
 // Routes
+app.use('/api/locations', locationRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/itineraries", itineraryRoutes);
 app.use("/api/expenses", expenseRoutes);
